@@ -117,11 +117,11 @@
 				$(document).ready(function() {
 					var url ='https://api.darksky.net/forecast/89f8daa21d1dbf6d0145c426eda317d3/37.8267,-122.4233'; //Place your DarkSky API Call Here
 					$.ajax({url:url, dataType:"jsonp"}).then(function(data) {
-						//console.log(data.currently);//Review all of the data returned
+						console.log(data.currently);//Review all of the data returned
 						$("#image_today").attr("src","img/" + data.currently.icon + ".png");
 						$("#icon_today").html(data.currently.icon);
 						$("#temp_today").html(data.currently.apparentTemperature + " F");
-						$("#thermometer_inner").attr("height",data.currently.apparentTemperature);
+						$("#thermometer_inner").css("height",data.currently.apparentTemperature + "%");
 						$("#precip_today").html(data.currently.precipProbability);
 						$("#humidity_today").html(data.currently.humidity);
 						$("#wind_today").html(data.currently.windSpeedy);
